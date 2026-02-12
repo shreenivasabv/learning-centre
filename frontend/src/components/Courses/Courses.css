@@ -1,0 +1,102 @@
+.courses-container {
+  padding: 50px 5%;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+/* Creating the responsive grid */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Individual Card Styling */
+.course-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column; /* Stacks content vertically */
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+}
+
+.course-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Ensures images are aligned and not stretched */
+}
+
+.course-info {
+  padding: 20px;
+  flex-grow: 1; /* Makes all info sections take up equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-info h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #222;
+}
+
+.course-info {
+  padding: 20px;
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+}
+
+
+.course-info p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+
+  /* The 4 Magic Properties for Clamping */
+  display: -webkit-box;           /* Required */
+  -webkit-box-orient: vertical;   /* Required */
+  -webkit-line-clamp: 3;          /* Number of lines to show before "..." */
+  overflow: hidden;               /* Required to hide the extra text */
+  
+  /* Remove any fixed 'height' properties here */
+  height: auto; 
+}
+
+.price {
+  font-weight: bold;
+  font-size: 18px;
+  color: orange;
+  display: block;
+  margin: 15px 0;
+}
+
+.enroll-btn {
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.enroll-btn:hover {
+  background-color: orange;
+}
+
+.course-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Modern fix: Forces a professional widescreen shape */
+  object-fit: cover;    /* Fills the 16:9 box completely */
+  object-position: center; /* Ensures the middle of your image is always visible */
+  display: block;
+  border-bottom: 2px solid #eee; /* Adds a clean separator */
+}

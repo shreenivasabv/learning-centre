@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 60px;
+  background-color: #111;
+  color: white;
+  margin-top: 50px;
+}
+
+.footer-right p {
+  margin: 6px 0;
+}
