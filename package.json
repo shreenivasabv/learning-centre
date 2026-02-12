@@ -1,0 +1,11 @@
+{
+  "name": "learning-centre",
+  "private": true,
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../admin && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd admin && npm run dev\" \"cd frontend && npm run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
