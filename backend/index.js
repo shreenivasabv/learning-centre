@@ -3,7 +3,10 @@ const cors = require("cors");
 const path = require("path");
 const mongoose = require("mongoose");
 const courseRoutes = require("./routes/courseRoutes");
-const contactRoutes = require("./routes/contactRoutes");    
+const contactRoutes = require("./routes/contactRoutes"); 
+require("dotenv").config();
+console.log("MONGO_URI:", process.env.MONGO_URI);
+
 
 const app = express();
 
