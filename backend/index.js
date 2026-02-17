@@ -12,8 +12,9 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:5173'
+  origin: ["http://localhost:5173", "https://your-app-name.vercel.app"]
 }));
+
 app.use(express.json());
 
 // Static Files
