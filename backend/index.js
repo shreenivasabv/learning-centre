@@ -27,6 +27,7 @@ app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
 // 4. Routes
 app.use("/api/courses", courseRoutes);
 app.use("/api/contact", contactRoutes);
+app.use("/api/auth", require("./routes/authRoutes")); // Add this line for auth routes
 
 // Root Route
 app.get("/", (req, res) => {
