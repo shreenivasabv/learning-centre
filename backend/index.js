@@ -12,7 +12,16 @@ const app = express();
 
 // Middleware
 app.use(cors({
+<<<<<<< HEAD
   origin: ["http://localhost:5173", "https://learning-centre.vercel.app"]
+=======
+  origin: [
+    "http://localhost:5173", 
+    "https://learning-centre-git-main-shreenivasabvs-projects.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+>>>>>>> a568cf485c69d23b42c47d520f09ab7ebf5228ad
 }));
 
 app.use(express.json());
