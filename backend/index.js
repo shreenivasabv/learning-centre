@@ -11,7 +11,9 @@ console.log("MONGO_URI:", process.env.MONGO_URI);
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5173'
+}));
 app.use(express.json());
 
 // Static Files
@@ -20,6 +22,9 @@ app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
 // Routes
 app.use("/api/courses", courseRoutes);
 app.use("/api/contact", contactRoutes); // Changed to singular to match your frontend screenshot
+
+
+app.get("api/test",contactRoutes);       
 
 // Root Route
 app.get("/", (req, res) => {
