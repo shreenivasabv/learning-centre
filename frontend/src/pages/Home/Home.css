@@ -151,11 +151,3 @@ body {
   }
 }
 
-.course-card img {
-  width: 100%;           /* Fills the horizontal space */
-  height: 200px;         /* Sets a consistent height for all cards */
-  object-fit: cover;     /* Crops slightly to fill the space without stretching */
-  /* OR use */
-  /* object-fit: contain; */ /* Shows the WHOLE image with letterboxing if needed */
-  display: block;
-}

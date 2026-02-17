@@ -3,10 +3,11 @@ import "./contactMessages.css";
 
 function ContactMessages() {
   const [messages, setMessages] = useState([]);
+const baseurl = import.meta.env.VITE_API_URL;
 
   // Fetch messages on component load
   useEffect(() => {
-    fetch("http://localhost:5000/api/contact") // Updated to plural to match your API
+    fetch(`${baseurl}/api/contact`) // Updated to plural to match your API
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch");
         return res.json();
