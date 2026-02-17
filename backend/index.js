@@ -5,45 +5,35 @@ const mongoose = require("mongoose");
 const courseRoutes = require("./routes/courseRoutes");
 const contactRoutes = require("./routes/contactRoutes"); 
 require("dotenv").config();
-console.log("MONGO_URI:", process.env.MONGO_URI);
-
 
 const app = express();
 
-// Middleware
+// 1. CORS Middleware - Updated to trust your specific Vercel URL
 app.use(cors({
-<<<<<<< HEAD
-  origin: ["http://localhost:5173", "https://learning-centre.vercel.app"]
-=======
-  origin: [
-    "http://localhost:5173", 
-    "https://learning-centre-git-main-shreenivasabvs-projects.vercel.app"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
->>>>>>> a568cf485c69d23b42c47d520f09ab7ebf5228ad
+    origin: [
+        "http://localhost:5173", 
+        "https://learning-centre.vercel.app",
+        "https://learning-centre-git-main-shreenivasabvs-projects.vercel.app"
+    ],
+    credentials: true
 }));
 
+// 2. Body Parser Middleware
 app.use(express.json());
 
-// Static Files
+// 3. Static Files
 app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
 
-// Routes
+// 4. Routes
 app.use("/api/courses", courseRoutes);
-app.use("/api/contact", contactRoutes); // Changed to singular to match your frontend screenshot
-
-
-app.get("api/test",contactRoutes);       
+app.use("/api/contact", contactRoutes);
 
 // Root Route
 app.get("/", (req, res) => {
     res.send("API Running...");
 });
-mongoose.connect(process.env.MONGO_URI)
 
-
-// MongoDB Connection
+// 5. MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("MongoDB Connected"))
 .catch(err => console.error("MongoDB Connection Error:", err));
